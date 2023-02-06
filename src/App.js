@@ -7,7 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Hello, {sum(2,3)}!</h2>
+        <h1>The sum of 2 and 3 is:</h1>
+        <h2>{sum(2,3)}</h2>
       </div>
     )
   }
