@@ -27,6 +27,15 @@ export class TodoList extends React.Component {
     })
   }
 
+  handleRemoveItem = (index) => {
+    const { items } = this.state
+    const updatedList = items.filter((item, i) => i !== index)
+    this.setState({
+      items: updatedList
+    })
+  }
+  
+
   render() {
     return (
 
@@ -43,7 +52,10 @@ export class TodoList extends React.Component {
 
             <ul>
                 {this.state.items.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>
+                        {item + " "}
+                        <button onClick={() => this.handleRemoveItem(index)}>Remove</button>
+                        </li>                    
                 ))}
             </ul>
       </div>
