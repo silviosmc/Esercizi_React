@@ -9,10 +9,13 @@ import { Login } from './Login';
 import { TodoList } from './TodoList';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Welcome } from './Welcome';
+import { Container } from './Container';
 
 export class App extends React.Component {
     render() {
         return(
+            <Container>
+
             <div>
                 <Hello />
                 <hr/>
@@ -40,6 +43,8 @@ export class App extends React.Component {
                 <br/>
                 <TodoList />
             </div>
+            
+            </Container>
         )
     }
 }
