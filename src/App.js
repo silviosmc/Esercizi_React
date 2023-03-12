@@ -10,6 +10,8 @@ import { TodoList } from './TodoList';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Welcome } from './Welcome';
 import { Container } from './Container';
+import { DisplayLanguage } from './DisplayLanguage';
+
 
 export class App extends React.Component {
     render() {
@@ -17,6 +19,8 @@ export class App extends React.Component {
             <Container title="Esercizi React">
 
             <div>
+                <DisplayLanguage/>
+
                 <Hello />
                 <hr/>
                 <br/>
@@ -52,6 +56,10 @@ export class App extends React.Component {
                     </ul>
                     )} 
                 />
+
+                <hr/>
+                <br/>
+                
             </div>
             
             </Container>
