@@ -24,7 +24,7 @@ export class App extends React.Component {
                 <Hello />
                 <hr/>
                 <br/>
-                <Welcome name={"John"} age={33} />
+                <Welcome name="John" age={33} />
                 <hr/>
                 <br/>
                 <Counter initialValue={0} incrementValue={1} initialInterval={1000} />
