@@ -12,9 +12,13 @@ export class ClickCounter extends React.Component {
   }
 
   render() {
+    const counterStyle = {
+      color: "#FFFF",
+      backgroundColor: this.state.counter < 8 ? "red" : "#adc178",
+    }
     return (<div>
       <p>Count: {this.state.counter}</p>
-      <button onClick={this.handleAddNumber}>Add</button>
+      <button onClick={this.handleAddNumber} style={counterStyle}>Add</button>
     </div>
     )
   }
