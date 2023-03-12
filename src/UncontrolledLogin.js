@@ -1,6 +1,12 @@
-import React from "react";
+import React, { createRef } from "react";
 
 export class UncontrolledLogin extends React.Component {
+
+    usernameRef = createRef()
+
+    componentDidMount() {
+        this.usernameRef.current.focus()
+    }
 
     handleSubmit = (event) => {
         event.preventDefault()
@@ -12,7 +18,7 @@ export class UncontrolledLogin extends React.Component {
         console.log({
             username,
             password,
-            remember,
+            remember
         })
     }
 
@@ -20,7 +26,7 @@ export class UncontrolledLogin extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input name="username" />
+                    <input name="username" ref={this.usernameRef}/>
                     <input name="password" type="password" />
                     <input name="remember" type="checkbox" />
                     <br/>
