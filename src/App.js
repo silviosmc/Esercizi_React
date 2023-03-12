@@ -11,6 +11,7 @@ import { UncontrolledLogin } from './UncontrolledLogin';
 import { Welcome } from './Welcome';
 import { Container } from './Container';
 import { DisplayLanguage } from './DisplayLanguage';
+import { Sum } from './Sum';
 
 
 export class App extends React.Component {
@@ -59,6 +60,7 @@ export class App extends React.Component {
 
                 <hr/>
                 <br/>
+                <Sum numbers={[1,2,3,4,5,6,7,8,9,10]}/>
                 
             </div>
             
