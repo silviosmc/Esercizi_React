@@ -29,7 +29,7 @@ export class App extends React.Component {
                 <InteractiveWelcome />
                 <hr/>
                 <br/>
-                <Login />
+                <Login onLogin={(state) => { console.log(state); }}/>
             </div>
         )
     }
