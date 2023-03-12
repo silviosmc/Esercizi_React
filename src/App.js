@@ -14,7 +14,7 @@ import { Container } from './Container';
 export class App extends React.Component {
     render() {
         return(
-            <Container>
+            <Container title="Esercizi React">
 
             <div>
                 <Hello />
