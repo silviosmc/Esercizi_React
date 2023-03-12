@@ -5,6 +5,7 @@ import { Counter } from './Counter';
 import { Hello } from './Hello';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { Login } from './Login';
+import { TodoList } from './ToDoList';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Welcome } from './Welcome';
 
@@ -34,6 +35,9 @@ export class App extends React.Component {
                 <hr/>
                 <br/>
                 <UncontrolledLogin />
+                <hr/>
+                <br/>
+                <TodoList />
             </div>
         )
     }
