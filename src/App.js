@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 import { ClickCounter } from './ClickCounter';
 import { ClickTracker } from './ClickTracker';
 import { Counter } from './Counter';
