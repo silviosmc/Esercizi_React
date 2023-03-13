@@ -28,7 +28,7 @@ export function App() {
             <Welcome name="John" age={33} />
             <hr/>
             <br/>
-            <Counter initialValue={0} incrementValue={1} initialInterval={1000} />
+            <Counter  />
             <hr/>
             <br/>
             <ClickCounter />
