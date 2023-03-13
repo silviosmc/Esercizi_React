@@ -12,6 +12,7 @@ import { Welcome } from './Welcome';
 import { Container } from './Container';
 import { DisplayLanguage } from './DisplayLanguage';
 import { Sum } from './Sum';
+import { GithubUser } from './GithubUser';
 
 
 export function App() {
@@ -61,6 +62,10 @@ export function App() {
             <hr/>
             <br/>
             <Sum />
+
+            <hr/>
+            <br/>
+            <GithubUser username="silviosmc"/>
             
         </div>
         
