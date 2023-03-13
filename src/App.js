@@ -40,7 +40,7 @@ export class App extends React.Component {
                 <InteractiveWelcome />
                 <hr/>
                 <br/>
-                <Login onLogin={(state) => { console.log(state); }}/>
+                <Login />
                 <hr/>
                 <br/>
                 <UncontrolledLogin />
