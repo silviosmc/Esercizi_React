@@ -14,57 +14,57 @@ import { DisplayLanguage } from './DisplayLanguage';
 import { Sum } from './Sum';
 
 
-export class App extends React.Component {
-    render() {
-        return(
-            <Container title="Esercizi React">
+export function App() {
 
-            <div>
-                <DisplayLanguage/>
+    return(
+        <Container title="Esercizi React">
 
-                <Hello />
-                <hr/>
-                <br/>
-                <Welcome name="John" age={33} />
-                <hr/>
-                <br/>
-                <Counter initialValue={0} incrementValue={1} initialInterval={1000} />
-                <hr/>
-                <br/>
-                <ClickCounter />
-                <hr/>
-                <br/>
-                <ClickTracker />
-                <hr/>
-                <br/>
-                <InteractiveWelcome />
-                <hr/>
-                <br/>
-                <Login />
-                <hr/>
-                <br/>
-                <UncontrolledLogin />
-                <hr/>
-                <br/>
-                <TodoList render={(items, handleRemoveItem) => (
-                    <ul>
-                        {items.map((item, index) => (
-                            <li key={index}>
-                                {item + " "}
-                                <button onClick={() => handleRemoveItem(index)}>Remove</button>
-                            </li>
-                        ))}
-                    </ul>
-                    )} 
-                />
+        <div>
+            <DisplayLanguage/>
 
-                <hr/>
-                <br/>
-                <Sum />
-                
-            </div>
+            <Hello />
+            <hr/>
+            <br/>
+            <Welcome name="John" age={33} />
+            <hr/>
+            <br/>
+            <Counter initialValue={0} incrementValue={1} initialInterval={1000} />
+            <hr/>
+            <br/>
+            <ClickCounter />
+            <hr/>
+            <br/>
+            <ClickTracker />
+            <hr/>
+            <br/>
+            <InteractiveWelcome />
+            <hr/>
+            <br/>
+            <Login />
+            <hr/>
+            <br/>
+            <UncontrolledLogin />
+            <hr/>
+            <br/>
+            <TodoList render={(items, handleRemoveItem) => (
+                <ul>
+                    {items.map((item, index) => (
+                        <li key={index}>
+                            {item + " "}
+                            <button onClick={() => handleRemoveItem(index)}>Remove</button>
+                        </li>
+                    ))}
+                </ul>
+                )} 
+            />
+
+            <hr/>
+            <br/>
+            <Sum />
             
-            </Container>
-        )
-    }
+        </div>
+        
+        </Container>
+    )
+
 }
