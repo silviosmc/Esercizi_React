@@ -1,25 +1,18 @@
-import React from "react";
+import React from 'react';
+import { useState } from 'react';
 
-export class ClickCounter extends React.Component {
-  state = {
-    counter: 0,
-  }
+export function ClickCounter() {
+    
+    const [valore, setValore] = useState(0)
 
-  handleAddNumber = () => {
-    this.setState((state) => {
-      return {counter: this.state.counter + 1}
-    })
-  }
-
-  render() {
-    const counterStyle = {
-      color: "#FFFF",
-      backgroundColor: this.state.counter < 8 ? "red" : "#adc178",
+    function handleCounter() {
+        setValore((valore) => valore + 1)
     }
-    return (<div>
-      <p>Count: {this.state.counter}</p>
-      <button onClick={this.handleAddNumber} style={counterStyle}>Add</button>
-    </div>
+    
+    return(
+        <div>
+            <h2>Counter: {valore}</h2>
+            <button onClick={handleCounter}>Add</button>
+        </div>
     )
-  }
 }
