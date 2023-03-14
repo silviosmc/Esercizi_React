@@ -11,7 +11,7 @@ export function ClickCounter({ onCounterChange }) {
   }
 
   useEffect(() => {
-    onCounterChange(valore);
+    // onCounterChange(valore);
   }, [valore]);
 
   return (

@@ -16,6 +16,7 @@ import { GithubUser } from './GithubUser';
 import { GithubUserList } from './GithubUserList';
 import { MyCustomHookLogin } from './MyCustomHookLogin';
 import { CustomHookGithubUser } from './CustomHookGithubUser';
+import { CarDetails } from './CarDetails';
 
 
 export function App() {
@@ -81,6 +82,10 @@ export function App() {
             <br/>
             <hr/>
             <CustomHookGithubUser />
+
+            <br/>
+            <hr/>
+            <CarDetails initialData={{model: "Fiat", year: 2000, color: "black"}}/>
             
         </div>
         
