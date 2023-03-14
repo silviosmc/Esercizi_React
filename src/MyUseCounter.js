@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export function CustomHookCounter(initialValue = 0) {
     const [valore, setValore] = useState(initialValue)
 
-    const Increment = () => {
+    const Increment = useCallback(() => {
         setValore((valore) => valore + 1)
-    }
-
-    const Decrement = () => {
+    }, [])
+    
+    const Decrement = useCallback(() => {
         setValore((valore) => valore -1)
-    }
+    }, [])
 
-    const Reset = () => {
+    const Reset = useCallback(() => {
         setValore(initialValue)
-    }
+    }, [])
+
+
 
     return {Increment, Decrement, Reset, valore};
 }
