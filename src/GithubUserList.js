@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { GithubUser } from "./GithubUser";
+// import { GithubUser } from "./GithubUser";
+import { Link, Outlet } from "react-router-dom";
 
 export function GithubUserList() {
   const [usernames, setUsernames] = useState([]);
@@ -23,7 +24,10 @@ export function GithubUserList() {
       </div>
 
       {usernames.map((username) => (
-        <GithubUser key={username} username={username} />
+        <div key={username}>
+          <Link to={`/users/${username}`}>{username}</Link>
+          <Outlet/>
+        </div>
       ))}
 
       <br/>
