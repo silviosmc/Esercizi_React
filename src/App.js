@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css'
 import { ClickCounter } from './ClickCounter';
 import { ClickTracker } from './ClickTracker';
@@ -17,15 +17,34 @@ import { GithubUserList } from './GithubUserList';
 import { MyCustomHookLogin } from './MyCustomHookLogin';
 import { CustomHookGithubUser } from './CustomHookGithubUser';
 import { CarDetails } from './CarDetails';
+import { LanguageContext } from "./LanguageContext"
+
 
 
 export function App() {
+
+    const [language, setLanguage] = useState("en")
+    
+
+    const handleLanguageChange = (event) => {
+        setLanguage(event.target.value)
+    }
 
     return(
         <Container title="Esercizi React">
 
         <div>
+
+        <LanguageContext.Provider value={language}>
+            <div>
+                <select value={language} onChange={handleLanguageChange}>
+                    <option value="en">Inglese</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+
             <DisplayLanguage/>
+        </LanguageContext.Provider>
 
             <Hello />
             <hr/>
