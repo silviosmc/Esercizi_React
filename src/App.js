@@ -1,132 +1,19 @@
-import React, { useState } from 'react';
-import './index.css'
-import { ClickCounter } from './ClickCounter';
-import { ClickTracker } from './ClickTracker';
-import { Counter } from './Counter';
-import { Hello } from './Hello';
-import { InteractiveWelcome } from './InteractiveWelcome';
-import { Login } from './Login';
-import { TodoList } from './TodoList';
-import { UncontrolledLogin } from './UncontrolledLogin';
-import { Welcome } from './Welcome';
+import React from 'react';
 import { Container } from './Container';
-import { DisplayLanguage } from './DisplayLanguage';
-import { Sum } from './Sum';
-import { GithubUser } from './GithubUser';
-import { GithubUserList } from './GithubUserList';
-import { MyCustomHookLogin } from './MyCustomHookLogin';
-import { CustomHookGithubUser } from './CustomHookGithubUser';
-import { CarDetails } from './CarDetails';
-import { LanguageContext } from "./LanguageContext"
-import { FilteredList } from './FilteredList';
+import { Route, Routes } from "react-router-dom";
+import { Welcome } from './Welcome';
 
 
 
 export function App() {
 
-    const [language, setLanguage] = useState("en")
-    
-
-    const handleLanguageChange = (event) => {
-        setLanguage(event.target.value)
-    }
-
-    // FilteredList
-    const dataList = [
-        { name: "John", id: 1, age: 25 },
-        { name: "Jane", id: 2, age: 19 },
-        { name: "Bob", id: 3, age: 16 },
-        { name: "Alice", id: 4, age: 22 },
-        { name: "Tom", id: 5, age: 17 },
-        { name: "Kate", id: 6, age: 31 },
-        { name: "Peter", id: 7, age: 20 },
-        { name: "Emma", id: 8, age: 15 },
-        { name: "David", id: 9, age: 27 },
-        { name: "Amy", id: 10, age: 18 },
-      ];
-
     return(
-        <Container title="Esercizi React">
+        <Container title="React Router 01">
 
-        <div>
+            <Routes>
+                <Route path="/" element={<Welcome name="Silvio" age={33} />} />
+            </Routes>
 
-        <LanguageContext.Provider value={language}>
-            <div>
-                <select value={language} onChange={handleLanguageChange}>
-                    <option value="en">Inglese</option>
-                    <option value="it">Italiano</option>
-                </select>
-            </div>
-
-            <DisplayLanguage/>
-        </LanguageContext.Provider>
-
-            <Hello />
-            <hr/>
-            <br/>
-            <Welcome name="John" age={33} />
-            <hr/>
-            <br/>
-            <Counter  />
-            <hr/>
-            <br/>
-            <ClickCounter />
-            <hr/>
-            <br/>
-            <ClickTracker />
-            <hr/>
-            <br/>
-            <InteractiveWelcome />
-            <hr/>
-            <br/>
-            <Login />
-            <hr/>
-            <br/>
-            <UncontrolledLogin />
-            <hr/>
-            <br/>
-            <TodoList render={(items, handleRemoveItem) => (
-                <ul>
-                    {items.map((item, index) => (
-                        <li key={index}>
-                            {item + " "}
-                            <button onClick={() => handleRemoveItem(index)}>Remove</button>
-                        </li>
-                    ))}
-                </ul>
-                )} 
-            />
-
-            <hr/>
-            <br/>
-            <Sum />
-
-            <hr/>
-            <br/>
-            <GithubUser username="silviosmc"/>
-
-            <hr/>
-            <br/>
-            <GithubUserList />
-
-            <br/>
-            <hr/>
-            <MyCustomHookLogin />
-
-            <br/>
-            <hr/>
-            <CustomHookGithubUser />
-
-            <br/>
-            <hr/>
-            <CarDetails initialData={{model: "Fiat", year: 2000, color: "black"}}/>
-
-            <br/>
-            <hr/>
-            <FilteredList list={dataList}/>
-            
-        </div>
-        
         </Container>
     )
 
