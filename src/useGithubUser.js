@@ -6,11 +6,16 @@ async function fetcher(url) {
 }
 
 export function useGithubUser(username) {
-    const { data, error } = useSWR(username ? `https://api.github.com/users/${username}`: null, fetcher)
+    const { data, error, mutate } = useSWR(username ? `https://api.github.com/users/${username}`: null, fetcher)
+
+    const handleRefresh = () => {
+        mutate()
+    }
 
     return {
         data,
         error,
-        loading: !data && !error
+        loading: !data && !error,
+        onRefresh: handleRefresh
     }
 }
