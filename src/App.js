@@ -23,12 +23,13 @@ export function App() {
     }
 
     return(
-        <Container title="React Router 04">
+        <Container title="React Router 05">
 
             <Routes>
                 <Route path="/" element={<Welcome name="Silvio" age={33} />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/users/:username" element={<ShowGithubUser />} />
+                <Route path="*" element={<div><h3>Not found!</h3></div>} />
             </Routes>
             <button onClick={handleHomeButton}>Home</button>
             <button onClick={handleCounterButton}>Counter</button>
