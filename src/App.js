@@ -18,6 +18,7 @@ import { MyCustomHookLogin } from './MyCustomHookLogin';
 import { CustomHookGithubUser } from './CustomHookGithubUser';
 import { CarDetails } from './CarDetails';
 import { LanguageContext } from "./LanguageContext"
+import { FilteredList } from './FilteredList';
 
 
 
@@ -29,6 +30,20 @@ export function App() {
     const handleLanguageChange = (event) => {
         setLanguage(event.target.value)
     }
+
+    // FilteredList
+    const dataList = [
+        { name: "John", id: 1, age: 25 },
+        { name: "Jane", id: 2, age: 19 },
+        { name: "Bob", id: 3, age: 16 },
+        { name: "Alice", id: 4, age: 22 },
+        { name: "Tom", id: 5, age: 17 },
+        { name: "Kate", id: 6, age: 31 },
+        { name: "Peter", id: 7, age: 20 },
+        { name: "Emma", id: 8, age: 15 },
+        { name: "David", id: 9, age: 27 },
+        { name: "Amy", id: 10, age: 18 },
+      ];
 
     return(
         <Container title="Esercizi React">
@@ -105,6 +120,10 @@ export function App() {
             <br/>
             <hr/>
             <CarDetails initialData={{model: "Fiat", year: 2000, color: "black"}}/>
+
+            <br/>
+            <hr/>
+            <FilteredList list={dataList}/>
             
         </div>
         
