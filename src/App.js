@@ -4,6 +4,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { Welcome } from './Welcome';
 import { Counter } from './Counter';
 import { ShowGithubUser } from './ShowGithubUser';
+import { GithubUserList } from './GithubUserList';
 
 
 // Ho utilizzato i button con useNavigate perchè i link per qualche motivo non li renderizzava
@@ -23,12 +24,14 @@ export function App() {
     }
 
     return(
-        <Container title="React Router 05">
+        <Container title="React Router 06">
 
             <Routes>
-                <Route path="/" element={<Welcome name="Silvio" age={33} />} />
+                <Route path="/" element={<Welcome name="Silvio"/>} />
                 <Route path="/counter" element={<Counter />} />
-                <Route path="/users/:username" element={<ShowGithubUser />} />
+                <Route path="/users" element={<GithubUserList />}>
+                    <Route path=":username" element={<ShowGithubUser />} />
+                </Route>
                 <Route path="*" element={<div><h3>Not found!</h3></div>} />
             </Routes>
             <button onClick={handleHomeButton}>Home</button>

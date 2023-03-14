@@ -26,6 +26,8 @@ export function GithubUserList() {
         <GithubUser key={username} username={username} />
       ))}
 
+      <br/>
+
     </div>
   );
 }
