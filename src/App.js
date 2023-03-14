@@ -15,6 +15,7 @@ import { Sum } from './Sum';
 import { GithubUser } from './GithubUser';
 import { GithubUserList } from './GithubUserList';
 import { MyCustomHookLogin } from './MyCustomHookLogin';
+import { CustomHookGithubUser } from './CustomHookGithubUser';
 
 
 export function App() {
@@ -76,6 +77,10 @@ export function App() {
             <br/>
             <hr/>
             <MyCustomHookLogin />
+
+            <br/>
+            <hr/>
+            <CustomHookGithubUser />
             
         </div>
         
